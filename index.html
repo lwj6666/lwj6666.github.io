@@ -83,7 +83,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">3</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a></li>
   </ul>
 </nav>
 
@@ -175,6 +175,131 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://lwj6666.github.io/2022/08/01/%E5%88%9D%E8%AF%86git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Mr.li">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hope">
+      <meta itemprop="description" content="个人自习博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hope">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/08/01/%E5%88%9D%E8%AF%86git/" class="post-title-link" itemprop="url">初识git</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-08-01 20:17:44 / 修改时间：20:26:38" itemprop="dateCreated datePublished" datetime="2022-08-01T20:17:44+08:00">2022-08-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="初识git"><a href="#初识git" class="headerlink" title="初识git"></a>初识git</h2><p>远程仓库 remote repository：github、码云这种代码托管平台</p>
+<p>工作区 workspace：本地电脑里的一个文件夹(任何对象都是在工作区中诞生和被修改)  </p>
+<p>暂存区 Index / Stage：.git目录下的index文件, 暂存区会记录git add添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文件实体。(说明：任何修改都是从进入暂存区才开始被版本控制；)  </p>
+<ul>
+<li>可以使用git status查看暂存区的状态。</li>
+</ul>
+<p>本地仓库 Repository：保存了对象被提交过的各个版本，比起工作区和暂存区的内容，它要更旧一些。    </p>
+<ul>
+<li>git commit 后同步index的目录树到本地仓库，方便从下一步通过git push 同步本地仓库与远程仓库。           </li>
+</ul>
+<p><img src="/images/2022-08-01/git%E8%BF%87%E7%A8%8B.png"></p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ol>
+<li><p>只有把修改提交到本地仓库，该修改才能在仓库中留下痕迹；   </p>
+</li>
+<li><p>可以在任何地方新建本地仓库，只需要在目标目录下执行 “git init” 指令，就会将此目录自动初始化为本地仓库，同时它会新建”.git”目录</p>
+</li>
+</ol>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><pre><code>git config --global user.name &quot;如果用户名有空格需要括起来&quot; 配置用户名
+git config --global user.email 自己的邮箱                 配置邮箱
+git config user.name   查看配置用户名
+git config user.email  查看配置邮箱
+git init    搭建本地版本库
+git add 文件名   将工作区的文件标记放进暂存区
+git status  文件状态查看
+git commit   将暂存区文件提交到本地版本库（本地仓库） 
+git commit -m &quot;版本号&quot;  不用进Vim将暂存区文件提交到本地版本库
+git commit -a -m &quot;版本号&quot;  将工作区的文件标记放进本地版本库
+git log  查看提交的版本 (按q则可退出，不能重按q)
+touch .gitignore  创建gitignore文件(在gitignore文件写入文件名，该文件则不会被追踪)
+git branch 分支名  创建分支
+git branch  查看创建了多少分支 (按q则可退出，不能重按q)
+git checkout 分支名  切换分支  (分支是复制了master里的文件)
+git checkout -b 分支名  创建分支并进入分支
+git branch -d 分支名  删除分支(要分支合并才可以使用)
+git branch -D 分支名    强制删除分支(不用分支合并)
+git merge 分支名  把别的分支合并到当前所处分支
+git clone 仓库地址  把远程仓库克隆到本地版本库(默认生成一个本地版本库，并且和远程库已经建立了联系)
+git remote -v  查看与哪些远程仓库有联系(默认origin代表远程仓库url)
+git push 
+git fetch 将远程仓库拉取到本地版本库
+git diff orgin/main 对比本地版本库和远程仓库的区别
+git pull  将远程仓库拉取到工作区
+</code></pre>
+<h3 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h3><pre><code>i 插入信息
+:wq  保存并退出
+</code></pre>
+<h3 id="关于-gitignore后缀文件"><a href="#关于-gitignore后缀文件" class="headerlink" title="关于.gitignore后缀文件"></a>关于.gitignore后缀文件</h3><p>将文件名写入.gitignore后缀文件中,文件将不会被追踪。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://lwj6666.github.io/2022/07/20/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -203,9 +328,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-07-20 13:13:23 / 修改时间：19:39:00" itemprop="dateCreated datePublished" datetime="2022-07-20T13:13:23+08:00">2022-07-20</time>
+      <time title="创建时间：2022-07-20 13:13:23" itemprop="dateCreated datePublished" datetime="2022-07-20T13:13:23+08:00">2022-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-08-01 20:24:33" itemprop="dateModified" datetime="2022-08-01T20:24:33+08:00">2022-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -240,7 +371,7 @@
 <blockquote>
 <p>iconfont官方网址：<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">阿里巴巴矢量图标库</a></p>
 </blockquote>
-<p><img src="/images/document_image/2022-07-20/%E7%9B%AE%E5%BD%95.webp"></p>
+<p><img src="/images/2022-07-20/%E7%9B%AE%E5%BD%95.webp"></p>
 <center><font color=gray>(根据demo_index文档使用即可)</font></center>
 
 <h2 id="字体格式文件的比较"><a href="#字体格式文件的比较" class="headerlink" title="字体格式文件的比较"></a>字体格式文件的比较</h2><ul>
@@ -452,7 +583,7 @@ hexo d  //部署
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-13 22:08:21" itemprop="dateModified" datetime="2022-07-13T22:08:21+08:00">2022-07-13</time>
+      <time title="修改时间：2022-08-01 20:24:08" itemprop="dateModified" datetime="2022-08-01T20:24:08+08:00">2022-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -474,7 +605,7 @@ hexo d  //部署
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="好用的编写工具：Vcode-markdown-all-in-one-插件"><a href="#好用的编写工具：Vcode-markdown-all-in-one-插件" class="headerlink" title="好用的编写工具：Vcode + markdown all in one 插件"></a>好用的编写工具：Vcode + markdown all in one 插件</h1><h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><ol>
+          <h2 id="好用的编写工具：Vcode-markdown-all-in-one-插件"><a href="#好用的编写工具：Vcode-markdown-all-in-one-插件" class="headerlink" title="好用的编写工具：Vcode + markdown all in one 插件"></a>好用的编写工具：Vcode + markdown all in one 插件</h2><h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><ol>
 <li>提供了常用操作便利的快捷键</li>
 <li>支持目录</li>
 <li>一边书写一边预览<ul>
@@ -487,16 +618,16 @@ hexo d  //部署
 <li>可格式化table (Alt + Shift + F) 以及Task list (use Alt + C to check/uncheck a list item)</li>
 <li>支持特殊数学符号渲染</li>
 </ol>
-<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键:"></a>常用快捷键:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + Shift + P    指令台</span><br><span class="line">Ctrl + B    粗体</span><br><span class="line">Ctrl + I    斜体</span><br><span class="line">Alt + S    删除线</span><br><span class="line">Ctrl + Shift + ]    标题(uplevel)</span><br><span class="line">Ctrl + Shift + [    标题(downlevel)</span><br><span class="line">Ctrl + M    切换数学环境</span><br><span class="line">Alt + C    Check/Uncheck task list item（选中或则取消任务列表项）</span><br></pre></td></tr></table></figure>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键:"></a>常用快捷键:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + Shift + P    指令台</span><br><span class="line">Ctrl + B    粗体</span><br><span class="line">Ctrl + I    斜体</span><br><span class="line">Alt + S    删除线</span><br><span class="line">Ctrl + Shift + ]    标题(uplevel)</span><br><span class="line">Ctrl + Shift + [    标题(downlevel)</span><br><span class="line">Ctrl + M    切换数学环境</span><br><span class="line">Alt + C    Check/Uncheck task list item（选中或则取消任务列表项）</span><br></pre></td></tr></table></figure>
 
-<h2 id="其他快捷键"><a href="#其他快捷键" class="headerlink" title="其他快捷键"></a>其他快捷键</h2><h3 id="生成目录"><a href="#生成目录" class="headerlink" title="生成目录"></a>生成目录</h3><p><img src="/images/document_image/2022-02-23/%E7%9B%AE%E5%BD%95.webp"></p>
-<h3 id="列表编辑"><a href="#列表编辑" class="headerlink" title="列表编辑"></a>列表编辑</h3><p><img src="/images/document_image/2022-02-23/%E5%88%97%E8%A1%A8.webp"> </p>
-<h3 id="格式化-Table"><a href="#格式化-Table" class="headerlink" title="格式化 Table"></a>格式化 Table</h3><p><img src="/images/document_image/2022-02-23/%E6%A0%BC%E5%BC%8F%E5%8C%96Table.webp"> </p>
-<h3 id="任务清单"><a href="#任务清单" class="headerlink" title="任务清单"></a>任务清单</h3><p><img src="/images/document_image/2022-02-23/%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95.webp" alt="Alt + C 能选择或取消"> </p>
-<h3 id="数学渲染"><a href="#数学渲染" class="headerlink" title="数学渲染"></a>数学渲染</h3><p><img src="/images/document_image/2022-02-23/%E6%95%B0%E5%AD%A6%E6%B8%B2%E6%9F%93.webp" alt="数学渲染"> </p>
+<h3 id="其他快捷键"><a href="#其他快捷键" class="headerlink" title="其他快捷键"></a>其他快捷键</h3><h4 id="生成目录"><a href="#生成目录" class="headerlink" title="生成目录"></a>生成目录</h4><p><img src="/images/2022-02-23/%E7%9B%AE%E5%BD%95.webp"></p>
+<h4 id="列表编辑"><a href="#列表编辑" class="headerlink" title="列表编辑"></a>列表编辑</h4><p><img src="/images/2022-02-23/%E5%88%97%E8%A1%A8.webp"> </p>
+<h4 id="格式化-Table"><a href="#格式化-Table" class="headerlink" title="格式化 Table"></a>格式化 Table</h4><p><img src="/images/2022-02-23/%E6%A0%BC%E5%BC%8F%E5%8C%96Table.webp"> </p>
+<h4 id="任务清单"><a href="#任务清单" class="headerlink" title="任务清单"></a>任务清单</h4><p><img src="/images/2022-02-23/%E4%BB%BB%E5%8A%A1%E6%B8%85%E5%8D%95.webp" alt="Alt + C 能选择或取消"> </p>
+<h4 id="数学渲染"><a href="#数学渲染" class="headerlink" title="数学渲染"></a>数学渲染</h4><p><img src="/images/2022-02-23/%E6%95%B0%E5%AD%A6%E6%B8%B2%E6%9F%93.webp" alt="数学渲染"> </p>
 <p><strong>ps</strong>: 我在vs中预览一直看不见图片，我还以为是路径的问题，但挂进本地服务器中却可以看见。(找到原因了：没拉进vs工作区所以看不到[<font color=Blue>也有路径的问题</font>])</p>
 <hr>
-<h1 id="Markdown的写作手法-对我自己能用上的汇总"><a href="#Markdown的写作手法-对我自己能用上的汇总" class="headerlink" title="Markdown的写作手法(对我自己能用上的汇总)"></a>Markdown的写作手法(对我自己能用上的汇总)</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>使用#号可表示1-6级标题，一级标题对应一个#号，二级标题对应两个#号，以此类推。</p>
+<h2 id="Markdown的写作手法-对我自己能用上的汇总"><a href="#Markdown的写作手法-对我自己能用上的汇总" class="headerlink" title="Markdown的写作手法(对我自己能用上的汇总)"></a>Markdown的写作手法(对我自己能用上的汇总)</h2><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>使用#号可表示1-6级标题，一级标题对应一个#号，二级标题对应两个#号，以此类推。</p>
 <pre><code>#
 ##
 ###
@@ -504,7 +635,7 @@ hexo d  //部署
 #####
 ######
 </code></pre>
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><ul>
+<h3 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h3><ul>
 <li>粗体：在文字两边分别加**</li>
 <li>斜体：在文字两边分别加*</li>
 <li>斜粗体：在文字两边分别加*</li>
@@ -512,7 +643,7 @@ hexo d  //部署
 <li>删除线：在文字两边分别加两个波浪号(~)</li>
 <li>下划线：在文字两边添加HTML的&lt;u&gt;标签来实现</li>
 </ul>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>无序列表使用*、+或是-作为列表标记，这些标记后面要添加一个空格，然后再填写内容：</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>无序列表使用*、+或是-作为列表标记，这些标记后面要添加一个空格，然后再填写内容：</p>
 <pre><code>* 打游戏
 - 打游戏
 + 打游戏 
@@ -526,7 +657,7 @@ hexo d  //部署
     - 打羽毛球
     - 跑步
 </code></pre>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>要创建块引用，请在段落前添加一个 &gt; 符号。  </p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>要创建块引用，请在段落前添加一个 &gt; 符号。  </p>
 <pre><code>&gt; #### The quarterly results look great!
 &gt;
 &gt; - Revenue was off the chart.
@@ -534,20 +665,20 @@ hexo d  //部署
 &gt;
 &gt;  *Everything* is going according to **plan**.
 </code></pre>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>1.如果是段落上的一个函数或片段的代码可以用反引号(`)把它包起来:</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>1.如果是段落上的一个函数或片段的代码可以用反引号(`)把它包起来:</p>
 <pre><code>`printf`函数
 </code></pre>
 <p>2.代码区块：段落前后加三个反引号(`) 或者缩进至少四个空格或一个制表符。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```代码区块```</span><br></pre></td></tr></table></figure>
 
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code>  </p>
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code>  </p>
 <pre><code>这是一个链接[百度](https://www.baidu.com)
 </code></pre>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><code>![图片alt](图片链接 &quot;图片title&quot;)</code></p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p><code>![图片alt](图片链接 &quot;图片title&quot;)</code></p>
 <pre><code>![这是图片](/assets/img/philly-magic-garden.jpg &quot;Magic Gardens&quot;)
 </code></pre>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p><code>---</code></p>
-<h2 id="拓展语法"><a href="#拓展语法" class="headerlink" title="拓展语法"></a>拓展语法</h2><p>可以前往<a target="_blank" rel="noopener" href="https://markdown.com.cn/extended-syntax/tables.html">Markdown文档</a></p>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p><code>---</code></p>
+<h3 id="拓展语法"><a href="#拓展语法" class="headerlink" title="拓展语法"></a>拓展语法</h3><p>可以前往<a target="_blank" rel="noopener" href="https://markdown.com.cn/extended-syntax/tables.html">Markdown文档</a></p>
 <p>Ps:格式化注释：<code>markdown语句</code></p>
 
       

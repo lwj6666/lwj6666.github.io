@@ -21,30 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lwj6666.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="关于字体图标iconfont(字体图标)使用来实现图标管理和统一。其有以下几种优势:    1. 矢量图标:  放大缩小不会糊照片。2. 轻量级:  体积小、渲染块、降低服务器请求次数(所有图标只用一个请求)3. 灵活性: 可以灵活的修改样式,例如尺寸、颜色等(如同修改字体一般)4. 兼容性:  几乎兼容所有主流浏览器 使用字体图标的方法使用步骤：  进入官方网址并注册账号(github账号通用)">
+    <meta name="description" content="初识git远程仓库 remote repository：github、码云这种代码托管平台 工作区 workspace：本地电脑里的一个文件夹(任何对象都是在工作区中诞生和被修改)   暂存区 Index &#x2F; Stage：.git目录下的index文件, 暂存区会记录git add添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文件实体。(说明：任何修改">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字体图标的浅浅了解">
-<meta property="og:url" content="http://lwj6666.github.io/2022/07/20/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3/index.html">
+<meta property="og:title" content="初识git">
+<meta property="og:url" content="http://lwj6666.github.io/2022/08/01/%E5%88%9D%E8%AF%86git/index.html">
 <meta property="og:site_name" content="Hope">
-<meta property="og:description" content="关于字体图标iconfont(字体图标)使用来实现图标管理和统一。其有以下几种优势:    1. 矢量图标:  放大缩小不会糊照片。2. 轻量级:  体积小、渲染块、降低服务器请求次数(所有图标只用一个请求)3. 灵活性: 可以灵活的修改样式,例如尺寸、颜色等(如同修改字体一般)4. 兼容性:  几乎兼容所有主流浏览器 使用字体图标的方法使用步骤：  进入官方网址并注册账号(github账号通用)">
+<meta property="og:description" content="初识git远程仓库 remote repository：github、码云这种代码托管平台 工作区 workspace：本地电脑里的一个文件夹(任何对象都是在工作区中诞生和被修改)   暂存区 Index &#x2F; Stage：.git目录下的index文件, 暂存区会记录git add添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文件实体。(说明：任何修改">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://lwj6666.github.io/images/2022-07-20/%E7%9B%AE%E5%BD%95.webp">
-<meta property="article:published_time" content="2022-07-20T05:13:23.000Z">
-<meta property="article:modified_time" content="2022-08-01T12:24:33.877Z">
+<meta property="og:image" content="http://lwj6666.github.io/images/2022-08-01/git%E8%BF%87%E7%A8%8B.png">
+<meta property="article:published_time" content="2022-08-01T12:17:44.000Z">
+<meta property="article:modified_time" content="2022-08-01T12:26:38.779Z">
 <meta property="article:author" content="Mr.li">
-<meta property="article:tag" content="字体图标">
+<meta property="article:tag" content="认识git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://lwj6666.github.io/images/2022-07-20/%E7%9B%AE%E5%BD%95.webp">
+<meta name="twitter:image" content="http://lwj6666.github.io/images/2022-08-01/git%E8%BF%87%E7%A8%8B.png">
 
 
-<link rel="canonical" href="http://lwj6666.github.io/2022/07/20/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3/">
+<link rel="canonical" href="http://lwj6666.github.io/2022/08/01/%E5%88%9D%E8%AF%86git/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://lwj6666.github.io/2022/07/20/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3/","path":"2022/07/20/字体图标的深入了解/","title":"字体图标的浅浅了解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://lwj6666.github.io/2022/08/01/%E5%88%9D%E8%AF%86git/","path":"2022/08/01/初识git/","title":"初识git"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>字体图标的浅浅了解 | Hope</title>
+<title>初识git | Hope</title>
   
 
 
@@ -119,7 +119,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"><span class="nav-number">1.</span> <span class="nav-text">关于字体图标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">使用字体图标的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">2.</span> <span class="nav-text">字体格式文件的比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%84%E5%AD%97%E4%BD%93%E6%A0%BC%E5%BC%8F%E6%96%87%E4%BB%B6%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.1.</span> <span class="nav-text">各字体格式文件介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E4%B8%8E%E7%B2%BE%E7%81%B5%E5%9B%BE%E5%AF%B9%E6%AF%94"><span class="nav-number">3.</span> <span class="nav-text">字体图标与精灵图对比</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E8%AF%86git"><span class="nav-number">1.</span> <span class="nav-text">初识git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">1.1.</span> <span class="nav-text">补充</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.2.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vim%E5%91%BD%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text">Vim命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E-gitignore%E5%90%8E%E7%BC%80%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">关于.gitignore后缀文件</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -182,7 +182,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://lwj6666.github.io/2022/07/20/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="http://lwj6666.github.io/2022/08/01/%E5%88%9D%E8%AF%86git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -195,12 +195,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="字体图标的浅浅了解 | Hope">
+      <meta itemprop="name" content="初识git | Hope">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          字体图标的浅浅了解
+          初识git
         </h1>
 
         <div class="post-meta-container">
@@ -210,15 +210,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-07-20 13:13:23" itemprop="dateCreated datePublished" datetime="2022-07-20T13:13:23+08:00">2022-07-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-08-01 20:24:33" itemprop="dateModified" datetime="2022-08-01T20:24:33+08:00">2022-08-01</time>
+      <time title="创建时间：2022-08-01 20:17:44 / 修改时间：20:26:38" itemprop="dateCreated datePublished" datetime="2022-08-01T20:17:44+08:00">2022-08-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -226,7 +220,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+          <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
         </span>
     </span>
 
@@ -240,35 +234,53 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="关于字体图标"><a href="#关于字体图标" class="headerlink" title="关于字体图标"></a>关于字体图标</h2><p>iconfont(字体图标)使用来实现图标管理和统一。其有以下几种优势:   </p>
-<p><strong><font color=red>1. 矢量图标: </font></strong> 放大缩小不会糊照片。<br><strong><font color=red>2. 轻量级: </font></strong> 体积小、渲染块、降低服务器请求次数(所有图标只用一个请求)<br><strong><font color=red>3. 灵活性: </font></strong><br>可以灵活的修改样式,例如尺寸、颜色等(如同修改字体一般)<br><strong><font color=red>4. 兼容性: </font></strong> 几乎兼容所有主流浏览器</p>
-<h3 id="使用字体图标的方法"><a href="#使用字体图标的方法" class="headerlink" title="使用字体图标的方法"></a>使用字体图标的方法</h3><p>使用步骤：</p>
-<ol>
-<li>进入官方网址并注册账号(github账号通用)。</li>
-<li>进入素材库中的官方图标库(也可以用其他创作者的图标,前提是适配)。</li>
-<li>将选中的图标加入购物车中,最后一同添加进项目(自己根据所写网页创建项目)中一同下载。</li>
-<li>在将项目中的图标下载至本地。 </li>
-<li>最后根据demo网页里的文档进行使用。</li>
-</ol>
-<blockquote>
-<p>iconfont官方网址：<a target="_blank" rel="noopener" href="https://www.iconfont.cn/">阿里巴巴矢量图标库</a></p>
-</blockquote>
-<p><img src="/images/2022-07-20/%E7%9B%AE%E5%BD%95.webp"></p>
-<center><font color=gray>(根据demo_index文档使用即可)</font></center>
-
-<h2 id="字体格式文件的比较"><a href="#字体格式文件的比较" class="headerlink" title="字体格式文件的比较"></a>字体格式文件的比较</h2><ul>
-<li>“iconfont.svg”是图标库的svg格式文件。(可用svg文件上传到阿里巴巴矢量图标库转换成字体图标)</li>
-<li>“iconfont.eot”，“iconfont.ttf”,“iconfont.woff”是图标库的字体格式文件。</li>
+        <h2 id="初识git"><a href="#初识git" class="headerlink" title="初识git"></a>初识git</h2><p>远程仓库 remote repository：github、码云这种代码托管平台</p>
+<p>工作区 workspace：本地电脑里的一个文件夹(任何对象都是在工作区中诞生和被修改)  </p>
+<p>暂存区 Index / Stage：.git目录下的index文件, 暂存区会记录git add添加文件的相关信息(文件名、大小、timestamp…)，不保存文件实体, 通过id指向每个文件实体。(说明：任何修改都是从进入暂存区才开始被版本控制；)  </p>
+<ul>
+<li>可以使用git status查看暂存区的状态。</li>
 </ul>
-<h3 id="各字体格式文件介绍"><a href="#各字体格式文件介绍" class="headerlink" title="各字体格式文件介绍"></a>各字体格式文件介绍</h3><p><strong>SVG</strong><br>SVG（Scalable Vector Graphics），即矢量图，是用于描述二维矢量图形的一种图形格式。在 Web 中使用 SVG 可以解决位图放大失真的问题。</p>
-<p><strong>TTF / OTF</strong><br>TTF（TrueTypeFont）是Apple公司和Microsoft公司共同推出的字体文件格式，随着windows的流行，已经变成最常用的一种字体文件表示方式。部分的因为这种格式容易被非法复制，因此催生了后来的WOFF字体格式。</p>
-<p><strong>EOT</strong><br>EOT（Embedded Open Type），是微软创造的字体格式。这种格式只在IE6-IE8里使用。</p>
-<p><strong>WOFF</strong><br>WOFF（Web Open Font Format）是一种网页所采用的字体格式标准。此字体格式发展于2009年，现在正由万维网联盟的Web字体工作小组标准化，以求成为推荐标准。此字体格式不但能够有效利用压缩来减少档案大小，并且不包含加密也不受DRM（数位著作权管理）限制。WOFF字体通常比其它字体加载要快，因为使用了OTF和TTF字体里的存储结构和压缩算法。这种字体格式还可以加入元信息和授权信息。</p>
-<p><strong>WOFF2(*)</strong><br>WOFF2（Web Open Font Format 2.0），相比woff最大的优化应该是加强了字体的压缩比。</p>
-<h2 id="字体图标与精灵图对比"><a href="#字体图标与精灵图对比" class="headerlink" title="字体图标与精灵图对比"></a>字体图标与精灵图对比</h2><ol>
-<li>字体图标在<strong>动画、多色展示</strong>上不如精灵图</li>
-<li>字体图标在<strong>高分辨率、变换颜色等效果、文件体积</strong>上比精灵图更优秀</li>
+<p>本地仓库 Repository：保存了对象被提交过的各个版本，比起工作区和暂存区的内容，它要更旧一些。    </p>
+<ul>
+<li>git commit 后同步index的目录树到本地仓库，方便从下一步通过git push 同步本地仓库与远程仓库。           </li>
+</ul>
+<p><img src="/images/2022-08-01/git%E8%BF%87%E7%A8%8B.png"></p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ol>
+<li><p>只有把修改提交到本地仓库，该修改才能在仓库中留下痕迹；   </p>
+</li>
+<li><p>可以在任何地方新建本地仓库，只需要在目标目录下执行 “git init” 指令，就会将此目录自动初始化为本地仓库，同时它会新建”.git”目录</p>
+</li>
 </ol>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><pre><code>git config --global user.name &quot;如果用户名有空格需要括起来&quot; 配置用户名
+git config --global user.email 自己的邮箱                 配置邮箱
+git config user.name   查看配置用户名
+git config user.email  查看配置邮箱
+git init    搭建本地版本库
+git add 文件名   将工作区的文件标记放进暂存区
+git status  文件状态查看
+git commit   将暂存区文件提交到本地版本库（本地仓库） 
+git commit -m &quot;版本号&quot;  不用进Vim将暂存区文件提交到本地版本库
+git commit -a -m &quot;版本号&quot;  将工作区的文件标记放进本地版本库
+git log  查看提交的版本 (按q则可退出，不能重按q)
+touch .gitignore  创建gitignore文件(在gitignore文件写入文件名，该文件则不会被追踪)
+git branch 分支名  创建分支
+git branch  查看创建了多少分支 (按q则可退出，不能重按q)
+git checkout 分支名  切换分支  (分支是复制了master里的文件)
+git checkout -b 分支名  创建分支并进入分支
+git branch -d 分支名  删除分支(要分支合并才可以使用)
+git branch -D 分支名    强制删除分支(不用分支合并)
+git merge 分支名  把别的分支合并到当前所处分支
+git clone 仓库地址  把远程仓库克隆到本地版本库(默认生成一个本地版本库，并且和远程库已经建立了联系)
+git remote -v  查看与哪些远程仓库有联系(默认origin代表远程仓库url)
+git push 
+git fetch 将远程仓库拉取到本地版本库
+git diff orgin/main 对比本地版本库和远程仓库的区别
+git pull  将远程仓库拉取到工作区
+</code></pre>
+<h3 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h3><pre><code>i 插入信息
+:wq  保存并退出
+</code></pre>
+<h3 id="关于-gitignore后缀文件"><a href="#关于-gitignore后缀文件" class="headerlink" title="关于.gitignore后缀文件"></a>关于.gitignore后缀文件</h3><p>将文件名写入.gitignore后缀文件中,文件将不会被追踪。</p>
 
     </div>
 
@@ -292,20 +304,17 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87/" rel="tag"># 字体图标</a>
+              <a href="/tags/%E8%AE%A4%E8%AF%86git/" rel="tag"># 认识git</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/08/01/%E5%88%9D%E8%AF%86git/" rel="prev" title="初识git">
-                  <i class="fa fa-chevron-left"></i> 初识git
-                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/02/23/%E7%BD%91%E7%AB%99%E7%9A%84%E8%AF%9E%E7%94%9F/" rel="next" title="Hexo搭建">
-                  Hexo搭建 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/07/20/%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87%E7%9A%84%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3/" rel="next" title="字体图标的浅浅了解">
+                  字体图标的浅浅了解 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
